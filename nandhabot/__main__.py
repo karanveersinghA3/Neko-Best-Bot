@@ -25,5 +25,9 @@ if __name__ == "__main__" :
 
 
 PM_START_TEXT = "hello! {}\nI'm anime themed nekos bot below click the help button know my commandslist!"
-PM_START_IMG = ""
+PM_START_IMG = [
+ "https://telegra.ph/file/5d0953a536678e88e9e2a.jpg",
+"https://telegra.ph/file/ce2fda9ecae0a574f1d42.jpg",
+"https://telegra.ph/file/ee4087f9c29b16e6a1b64.jpg",
+"https://telegra.ph/file/529c6071dbdd7600990ad.jpg" ]
 
