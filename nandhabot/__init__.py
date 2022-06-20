@@ -1,5 +1,4 @@
 import os
-import pyrogram
 from pyrogram import Client 
 
 API_ID = os.environ.get("API_ID", None)
