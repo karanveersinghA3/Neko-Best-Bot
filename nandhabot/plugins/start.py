@@ -45,5 +45,5 @@ async def help(_, query: CallbackQuery):
            query = query.message
            await query.edit_caption(HELP_TEXT,
              reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"))]])
+                InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}")]]))
        
