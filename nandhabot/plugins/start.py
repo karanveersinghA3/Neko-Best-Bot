@@ -1,7 +1,7 @@
 from nandhabot import bot
 from pyrogram import filters
 from pyrogram.types import *
-from nandhabot import PM_START_TEXT
+from nandhabot import PM_START_TEXT, PM_START_IMG
 
 
 buttons = [[
@@ -13,5 +13,6 @@ buttons = [[
 
 @bot.on_message(filters.command("start"))
 async def (_, m):
-        await m.reply_text(PM_START_TEXT,)
+        await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT,
+reply_markup=InlineKeyboardMarkup(buttons))
    
