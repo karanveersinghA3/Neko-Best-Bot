@@ -4,12 +4,17 @@ from pyrogram import filters
 from pyrogram.types import *
 from nandhabot import PM_START_TEXT, PM_START_IMG, UPDATES, SUPPORT, BOT_USERNAME
 
+
+
+
+
+
 buttons = [[
-            InlineKeyboardButton("ADD ME", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
-            InlineKeyboardButton("HELP", callback_data="help_back"),
+            InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
+            InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help_back"),
            ],[
-            InlineKeyboardButton("SUPPORT", url=f"https://t.me/{SUPPORT}"),
-            InlineKeyboardButton("UPDATES", url=f"https://t.me/{UPDATES}")]]
+            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"),
+            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{UPDATES}")]]
 
 @bot.on_message(filters.command("start"))
 async def start(_, m):
@@ -38,4 +43,7 @@ cuddle, poke, shrug`
 @bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
            query = query.message
-           await query.edit_caption(HELP_TEXT)
+           await query.edit_caption(HELP_TEXT,
+             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}")]])
+       
