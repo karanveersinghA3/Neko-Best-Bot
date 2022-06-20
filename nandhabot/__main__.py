@@ -22,3 +22,8 @@ if __name__ == "__main__" :
         plugins=plugins
     )
     bot.run()
+
+
+PM_START_TEXT = "hello! {}\nI'm anime themed nekos bot below click the help button know my commandslist!"
+PM_START_IMG = ""
+
