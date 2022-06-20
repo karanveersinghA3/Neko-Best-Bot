@@ -6,6 +6,7 @@ API_HASH = os.environ.get("API_HASH", None)
 BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 SUPPORT = os.environ.get("SUPPORT", None)
 UPDATES = os.environ.get("UPDATES", None)
+BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
 
 bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, plugins=dict(root="{}/plugins".format(__name__)))
 
