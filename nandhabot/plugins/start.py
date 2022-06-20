@@ -2,10 +2,7 @@ import random
 from nandhabot import bot
 from pyrogram import filters
 from pyrogram.types import *
-from nandhabot import PM_START_TEXT, PM_START_IMG, UPDATES, SUPPORT
-
-x = bot.get_me()
-BOT_USERNAME = x.username
+from nandhabot import PM_START_TEXT, PM_START_IMG, UPDATES, SUPPORT, BOT_USERNAME
 
 buttons = [[
             InlineKeyboardButton("ADD ME", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
