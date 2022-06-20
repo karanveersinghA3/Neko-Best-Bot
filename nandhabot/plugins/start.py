@@ -38,4 +38,4 @@ cuddle, poke, shrug`
 @bot.on_callback_query(filters.regex("help_back"))
 async def help(_, query: CallbackQuery):
            query = query.message
-           await query.edit(HELP_TEXT)
+           await query.edit_caption(HELP_TEXT)
