@@ -1,2 +1,2 @@
-# Nekosbestbot
-pyrogram type telegrambot Nekosbestbot
+# sbestbot
+pyrogram type telegrambot bestbot
