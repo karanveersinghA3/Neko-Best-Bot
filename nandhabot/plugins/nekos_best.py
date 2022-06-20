@@ -1,4 +1,4 @@
-from nandhabot import bot 
+from nandhabot.__main__ import bot 
 from pyrogram import filters 
 from pyrogram.types import Message 
 import requests 
