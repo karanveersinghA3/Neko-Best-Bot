@@ -1,3 +1,4 @@
+import random
 from nandhabot import bot
 from pyrogram import filters
 from pyrogram.types import *
@@ -13,7 +14,7 @@ buttons = [[
 
 @bot.on_message(filters.command("start"))
 async def start(_, m):
-        await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT,
+        await m.reply_photo(photo=random.choice(PM_START_IMG),caption=PM_START_TEXT.format(m.from_user.mention),
              reply_markup=InlineKeyboardMarkup(buttons))
    
 HELP_TEXT = """
