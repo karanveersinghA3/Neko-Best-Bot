@@ -12,12 +12,30 @@ buttons = [[
             InlineKeyboardButton("UPDATES", url=f"https://t.me/{UPDATES}")]]
 
 @bot.on_message(filters.command("start"))
-async def (_, m):
+async def start(_, m):
         await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT,
              reply_markup=InlineKeyboardMarkup(buttons))
    
+HELP_TEXT = """
+anime themed **SFW**:
+
+**image:**
+`neko, waifu`
+
+**animation:**
+`cry, kill, smile, 
+highfive, slap, kick, 
+hug, pat, punch,
+sleep, wink, think, 
+feed, tickle, shoot, 
+thumbsup, smug, laugh, 
+bore, baka, dance,
+blush, facepalm, stare, 
+pout, handhold, wave, 
+cuddle, poke, shrug`
+"""
 
 @bot.on_callback_query(filters.regex("help_back"))
-async def close(_, query: CallbackQuery):
+async def help(_, query: CallbackQuery):
            query = query.message
            await query.edit(HELP_TEXT)
