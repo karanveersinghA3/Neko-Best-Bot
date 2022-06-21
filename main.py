@@ -69,7 +69,7 @@ async def help(_, query: CallbackQuery):
 async def help(_, m):
            await m.reply_text(text="below Click Repo button for my codes",
              reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("ʀᴇᴘᴏ", url=f"https://t.me/{SUPPORT}")]]))
+                InlineKeyboardButton("ʀᴇᴘᴏ", url=f"https://github.com/ctzfamily/nekobestbot")]]))
 
 
 @bot.on_message(filters.command("cuddle"))
