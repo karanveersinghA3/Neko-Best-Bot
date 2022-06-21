@@ -457,3 +457,6 @@ def waifu(_, m: Message):
           url = api["url"]       
           m.reply_photo(photo=url)
     
+bot.run()
+   with bot:
+        bot.send_message(f"@{SUPPORT_CHAT}", "Hello there I'm Now online")
