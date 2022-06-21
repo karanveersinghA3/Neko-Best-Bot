@@ -37,9 +37,11 @@ async def start(_, m):
              reply_markup=InlineKeyboardMarkup(buttons))
    
 HELP_TEXT = """
-anime themed **SFW**:
+Anime themed **SFW**:
+
 **image:**
 `neko, waifu`
+
 **animation:**
 `cry, kill, smile, 
 highfive, slap, kick, 
