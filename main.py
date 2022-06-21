@@ -24,9 +24,6 @@ PM_START_TEXT = os.environ.get("PM_START_TEXT", None)
 bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 
-PM_START_TEXT = "hello! {}\nI'm anime themed nekos bot below click the help button know my commandslist!"
-
-
 buttons = [[
             InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
             InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help_back"),
