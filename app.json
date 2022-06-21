@@ -20,7 +20,18 @@
         "BOT_USERNAME": {
              "description": "Your bot username without @"
         },
-       
+        "SUPPORT": {
+             "description": "Your SupportChat username without @"
+       },
+        "UPDATES": {
+              "description": "Your UpdatesChannel username without @"
+       },
+        "PM_START_IMG": {
+                "description": "Your Bot pm start photo url telegraph link."
+       },
+        "PM_START_TEXT": {
+              "description": "Your Bot pm start text! use for mention {}."
+       }
     },
     "buildpacks": [
         {
