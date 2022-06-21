@@ -61,15 +61,35 @@ HELP_TEXT = """
 • Baka : /baka To Say A Person Baka
 • Blush : /blush To Makes A Person Blush
 
-**Message as to Lang below click the more button know more commandslist**
+• **Message as to Lang below click the more button know more commandslist!**
 """
 
 @bot.on_callback_query(filters.regex("help_back"))
-async def help(_, query: CallbackQuery):
+async def helpback(_, query: CallbackQuery):
            query = query.message
            await query.edit_caption(HELP_TEXT,
              reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("MORE", callback_data="more_help_text")]]))
+                InlineKeyboardButton("ᴍᴏʀᴇ", callback_data="more_help_text"),
+                InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about_back")]]))
+
+ABOUT_TEXT = """
+**Hello Dear Users!**
+`I'm A Neko Themed Telegram Bot Using Nekos.best! `
+
+My Pyroversion: {}
+My updates : [Nandhabots](https://t.me/nandhabots)
+My support : [NandhaSupport](https://t.me/nandhasupport)
+
+My All Credits fosto:
+[Nandha](https://t.me/nandhaxd) | [AASF](https://t.me/aasfcyberking)
+"""
+
+@bot.on_callback_query(filters.regex("about_back"))
+async def about(_, query: CallbackQuery):
+           query = query.message
+           await query.edit_caption(ABOUT_TEXT.format(pyro),
+             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("BACK", callback_data="help_back")]]))
 
 MORE_HELP_TEXT = """
 • Think : /think To Makes A Person Think
@@ -92,7 +112,7 @@ MORE_HELP_TEXT = """
 • Neko : /neko To Get Random Neko quotes
 """
 @bot.on_callback_query(filters.regex("more_help_text"))
-async def help(_, query: CallbackQuery):
+async def helpmore(_, query: CallbackQuery):
            query = query.message
            await query.edit_caption(MORE_HELP_TEXT,
              reply_markup=InlineKeyboardMarkup([[
