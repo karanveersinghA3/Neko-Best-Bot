@@ -1,0 +1,30 @@
+{
+    "name": "NekosBestBot",
+    "description": "A Anime Themed Anime React Bot",
+    "repository": "https://github.com/ctzfamily/NekoBestBot",
+    "keywords": [
+        "pyrogram",
+        "telegram bot",
+        "Anime React",
+    ],
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your Bot token from @Botfather"
+        },
+        "API_ID": {
+            "description": "Your API_ID from https://my.telegram.org/apps"
+        },
+        "API_HASH": {
+            "description": "Your API_HASH from https://my.telegram.org/apps"
+        },
+        "BOT_USERNAME": {
+             "description": "Your bot username without @"
+        },
+       
+    },
+    "buildpacks": [
+        {
+            "url": "heroku/python"
+        }
+    ]
+}
