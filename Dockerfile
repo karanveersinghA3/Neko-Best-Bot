@@ -1,7 +1,7 @@
 
 FROM python:3.10.0
 
-WORKDIR /root/__main__.py
+WORKDIR /root/__main__
 
 COPY . .
 
