@@ -1,6 +1,8 @@
 import logging, os, random
 from pyrogram import filters, Client 
 from pyrogram.types import *
+from subprocess import getoutput as run
+
 import requests 
 
 # enable logging
@@ -20,7 +22,7 @@ UPDATES = os.environ.get("UPDATES", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
 PM_START_IMG = os.environ.get("PM_START_IMG" , None)
 PM_START_TEXT = os.environ.get("PM_START_TEXT", None) 
-
+DEVS = os.environ.get("DEVS", None)
 bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 
@@ -457,7 +459,7 @@ def waifu(_, m: Message):
           m.reply_photo(photo=url)
 
 @bot.on_message(
-    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(dev_user)
+    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(DEVS)
 )
 def sendlogs(_, m: Message):
     logs = run("tail logs.txt")
@@ -477,7 +479,7 @@ def sendfilecallback(_, query: CallbackQuery):
     sender = query.from_user.id
     query.message.chat.id
 
-    if sender in dev_user:
+    if sender in DEVS:
         query.message.edit("`Sending...`")
         query.message.reply_document("logs.txt")
 
