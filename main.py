@@ -19,7 +19,6 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 SUPPORT = os.environ.get("SUPPORT", None)
 UPDATES = os.environ.get("UPDATES", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
-PM_START_IMG = os.environ.get("PM_START_IMG" , None)
 PM_START_TEXT = os.environ.get("PM_START_TEXT", None) 
 
 
@@ -53,7 +52,7 @@ OWO = (
     "No pats for {}!",
 )
 
-aasf = (
+neko_text = (
  "(*)^(*) *lazy arrival* zzzZZ(Z){}-kun I'm hungry...",
  "OwO why are calling me *wags tail in excitement* {} Do you have have cookies?",
  "^~^ *peeks by wall* Oh! {} Meowwww",
@@ -651,19 +650,10 @@ def sleep(_, message):
 @bot.on_message(filters.command("neko"))
 def neko(_, message):
     name = message.from_user.first_name
-    ke = random.choice(aasf)
+    ke = random.choice(neko_text)
     message.reply_text(
         ke.format(name)
     )
-
-@bot.on_message(filters.command("help"))
-def help(_, message):
-    pic = "https://telegra.ph/file/bdfbcff53832da88189d1.jpg"
-    buttons = [[
-        InlineKeyboardButton("[► Read Here ◄]", url="https://telegra.ph/NekoBesBot-05-26"),
-    ]]
-    message.reply_photo(pic, caption=help_text.format(message.from_user.mention),
-                             reply_markup=InlineKeyboardMarkup(buttons))
 
 bot.run()
 with bot:
