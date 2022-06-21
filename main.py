@@ -35,7 +35,11 @@ buttons = [[
 
 @bot.on_message(filters.command(["start","help"]))
 async def start(_, m):
-        await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT.format(m.from_user.mention),
+       url = "https://nekos.best/api/v2/neko"
+       r = requests.get(url)
+       e = r.json()
+       NEKO_IMG = e["results"][0]["url"]
+       await m.reply_photo(photo=NEKO_IMG,caption=PM_START_TEXT.format(m.from_user.mention),
              reply_markup=InlineKeyboardMarkup(buttons))
 
 OWO = (
@@ -652,27 +656,6 @@ def neko(_, message):
         ke.format(name)
     )
 
-@bot.on_message(filters.command("start"))
-async def start(_, message):
-      buttons = [[
-          InlineKeyboardButton("[► Repo ◄]", url="https://github.com/Team-Aasf/Nekos-Best-Bot"),
-          InlineKeyboardButton("[► Deploy ◄]", url="https://heroku.com/deploy?template=https://github.com/Team-Aasf/Nekos-Best-Bot")
-      ]]
-      url = "https://nekos.best/api/v2/neko"
-      r = requests.get(url)
-      e = r.json()
-      pics = e["results"][0]["url"]
-      kk = await message.reply(text="`ねこねこ`")
-      time.sleep(2)
-      await kk.delete()
-      await message.reply_photo(
-            photo=pics,
-            caption=PM_START_TEXT.format(
-                message.from_user.mention
-            ),
-            reply_markup=InlineKeyboardMarkup(buttons),
-        )
-
 @bot.on_message(filters.command("help"))
 def help(_, message):
     pic = "https://telegra.ph/file/bdfbcff53832da88189d1.jpg"
@@ -683,3 +666,5 @@ def help(_, message):
                              reply_markup=InlineKeyboardMarkup(buttons))
 
 bot.run()
+with bot:
+         bot.send_message(f"@{SUPPORT}", f"Hello there I'm Online!\nPyroVersion: {pyro}")
