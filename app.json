@@ -29,9 +29,11 @@
        },
         "PM_START_IMG": {
                 "description": "Your Bot pm start photo url telegraph link."
+                "value": " "https://telegra.ph/file/895f87f9f8028ecc4b632.jpg"
        },
         "PM_START_TEXT": {
               "description": "Your Bot pm start text! use for mention {}."
+              "value": "hello! {}\nI'm anime themed react bot below click my help button know my commandslist."
        }
     },
     "buildpacks": [
