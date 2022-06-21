@@ -19,7 +19,6 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
 SUPPORT = os.environ.get("SUPPORT", None)
 UPDATES = os.environ.get("UPDATES", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
-PM_START_TEXT = os.environ.get("PM_START_TEXT", None) 
 
 
 bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
@@ -40,6 +39,43 @@ async def start(_, m):
        NEKO_IMG = e["results"][0]["url"]
        await m.reply_photo(photo=NEKO_IMG,caption=PM_START_TEXT.format(m.from_user.mention),
              reply_markup=InlineKeyboardMarkup(buttons))
+
+HELP_TEXT = """
+**Anime Themed SFW:**
+• Kiss : /kiss To Kiss A Person
+• Highfive : /highfive To Highfive A Person
+• Happy : /happy To Makes A Person Happy
+• Laugh : /laugh To Makes A Person Laugh
+• Bite : /bite To Bite A Person
+• Poke : /poke To Poke A Person
+• Tickle : /tickle To Tickle A Person
+• Wave : /wave To Wave A Person
+• Thumbsup : /thumbsup To Thumbsup A Person
+• Stare : /stare To Makes A Person Stare
+• Cuddle : /cuddle To Cuddle A Person
+• Smile : /smile To Makes A Person Smile
+• Baka : /baka To Say A Person Baka
+• Blush : /blush To Makes A Person Blush
+• Think : /think To Makes A Person Think
+• Pout : /pout To Makes A Person Pout
+• Facepalm : /facepalm To Makes A Person Facepalm
+• Wink : /wink To Makes A Person Wink
+• Smug : /smug To Makes A Person Smug
+• Cry : /cry To Makes A Person Cry
+• Dance : /dance To Makes A Person Dance
+• Feed : /feed To Feed A Person
+• Shrug : /shrug To Shrug A Person
+• Bored : /bored To Makes A Person Bored
+• Pat : /pat To Pat A Person
+• Hug : /hug To Hug A Person
+• Slap : /slap To Slap A Person
+• Cute : /cute To Say Me Cute
+• Waifu : /waifu To Send Random Waifu Image
+• Kitsune : /kitsune To Send Random Kitsune Image
+• Sleep : /sleep To Say I Am Going To Sleep
+• Neko : /neko To Get Random Neko quotes
+"""
+
 
 OWO = (
     "*Neko pats {} on the head.",
