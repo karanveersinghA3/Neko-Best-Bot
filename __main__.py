@@ -1,4 +1,4 @@
-import logging, os
+import logging, os, random
 from pyrogram import filters, Client 
 from pyrogram.types import Message 
 import requests 
@@ -24,6 +24,43 @@ bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 
 PM_START_TEXT = "hello! {}\nI'm anime themed nekos bot below click the help button know my commandslist!"
+
+
+buttons = [[
+            InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
+            InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help_back"),
+           ],[
+            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"),
+            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{UPDATES}")]]
+
+@bot.on_message(filters.command("start"))
+async def start(_, m):
+        await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT.format(m.from_user.mention),
+             reply_markup=InlineKeyboardMarkup(buttons))
+   
+HELP_TEXT = """
+anime themed **SFW**:
+**image:**
+`neko, waifu`
+**animation:**
+`cry, kill, smile, 
+highfive, slap, kick, 
+hug, pat, punch,
+sleep, wink, think, 
+feed, tickle, shoot, 
+thumbsup, smug, laugh, 
+bore, baka, dance,
+blush, facepalm, stare, 
+pout, handhold, wave, 
+cuddle, poke, shrug`
+"""
+
+@bot.on_callback_query(filters.regex("help_back"))
+async def help(_, query: CallbackQuery):
+           query = query.message
+           await query.edit_caption(HELP_TEXT,
+             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}")]]))
 
 @bot.on_message(filters.command("cuddle"))
 def cuddle(_, m: Message):
