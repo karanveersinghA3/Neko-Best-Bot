@@ -1,9 +1,16 @@
-
+import logging 
 from pyrogram import filters 
 from pyrogram.types import Message 
 import requests 
 
-
+# enable logging
+FORMAT = "[NekosBestBot] %(message)s"
+logging.basicConfig(
+    handlers=[logging.FileHandler("logs.txt"), logging.StreamHandler()],
+    level=logging.INFO,
+    format=FORMAT,
+    datefmt="[%X]",
+)
 
 @bot.on_message(filters.command("cuddle"))
 def cuddle(_, m: Message):
