@@ -5,13 +5,11 @@ from pyrogram.types import *
 import requests 
 
 # enable logging
-FORMAT = "[NekosBestBot] %(message)s"
+FORMAT = "[Nekos-Best-Bot] %(message)s"
 logging.basicConfig(
-    handlers=[logging.FileHandler("logs.txt"), logging.StreamHandler()],
-    level=logging.INFO,
-    format=FORMAT,
-    datefmt="[%X]",
+    level=logging.INFO, format=FORMAT
 )
+  
 
 API_ID = os.environ.get("API_ID", None)
 API_HASH = os.environ.get("API_HASH", None)
