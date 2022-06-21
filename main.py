@@ -76,6 +76,12 @@ HELP_TEXT = """
 • Neko : /neko To Get Random Neko quotes
 """
 
+@bot.on_callback_query(filters.regex("help_back"))
+async def help(_, query: CallbackQuery):
+           query = query.message
+           await query.edit_caption(HELP_TEXT,
+             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}")]]))
 
 OWO = (
     "*Neko pats {} on the head.",
@@ -97,7 +103,6 @@ neko_text = (
  "Hello UwU {} I'm here to play, Meow"
 )
 
-help_text = "**Hoi {} I Am A Pyrogram Based Telegram Bot Using Nekos.best Click The Bellow But To Check My Commands**"
 
 @bot.on_message(filters.command("kiss"))
 async def kiss(_, message):
