@@ -31,6 +31,12 @@ buttons = [[
             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"),
             InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{UPDATES}")]]
 
+PM_START_TEXT = """
+**Welcome** {}~kun ฅ(≈>ܫ<≈)
+`I'm A Neko Themed Telegram Bot Using Nekos.best! `
+**Make Your Groups Active By Adding Me There! ××**
+"""
+
 @bot.on_message(filters.command(["start","help"]))
 async def start(_, m):
        url = "https://nekos.best/api/v2/neko"
