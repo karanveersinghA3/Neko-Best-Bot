@@ -1,4 +1,4 @@
-from nandhabot import bot #nekos.best
+
 from pyrogram import filters 
 from pyrogram.types import Message 
 import requests 
