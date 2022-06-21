@@ -1,6 +1,7 @@
 {
     "name": "NekosBestBot",
     "description": "A Anime Themed Anime React Bot",
+    "logo": "https://telegra.ph/file/279aabde88baf84afeaee.jpg",
     "repository": "https://github.com/ctzfamily/NekoBestBot",
     "keywords": [
         "pyrogram",
