@@ -462,4 +462,4 @@ def waifu(_, m: Message):
     
 bot.run()
 with bot:
-        bot.send_message(f"@{SUPPORT}", "Hello there I'm Online!\nPyrogram Version: {pyrover}")
+        bot.send_message(f"@{SUPPORT}", f"Hello there I'm Online!\nPyrogram Version: {pyrover}")
