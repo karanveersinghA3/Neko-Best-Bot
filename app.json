@@ -23,9 +23,11 @@
         },
         "SUPPORT": {
              "description": "Your SupportChat username without @"
+             "value": "nandhasupport"
        },
         "UPDATES": {
               "description": "Your UpdatesChannel username without @"
+              "value": "nandhabots"
        },
         "PM_START_IMG": {
                 "description": "Your Bot pm start photo url telegraph link."
