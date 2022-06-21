@@ -1,5 +1,5 @@
 import logging, os, random
-from pyrogram import filters, Client 
+from pyrogram import filters, Client, __version__ as pyrover
 from pyrogram.types import *
 from subprocess import getoutput as run
 
@@ -22,7 +22,8 @@ UPDATES = os.environ.get("UPDATES", None)
 BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
 PM_START_IMG = os.environ.get("PM_START_IMG" , None)
 PM_START_TEXT = os.environ.get("PM_START_TEXT", None) 
-DEVS = os.environ.get("DEVS", None)
+
+
 bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 
@@ -458,37 +459,7 @@ def waifu(_, m: Message):
           url = api["url"]       
           m.reply_photo(photo=url)
 
-@bot.on_message(
-    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(DEVS)
-)
-def sendlogs(_, m: Message):
-    logs = run("tail logs.txt")
-    x = paste(logs)
-    keyb = [
-        [
-            InlineKeyboardButton("Link", url=x),
-            InlineKeyboardButton("File", callback_data="sendfile"),
-        ],
-    ]
-    m.reply(x, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(keyb))
-
-
-
-@bot.on_callback_query(filters.regex(r"sendfile"))
-def sendfilecallback(_, query: CallbackQuery):
-    sender = query.from_user.id
-    query.message.chat.id
-
-    if sender in DEVS:
-        query.message.edit("`Sending...`")
-        query.message.reply_document("logs.txt")
-
-    else:
-        query.answer(
-            "This Is A Developer's Restricted Command.You Don't Have Access To Use This."
-        )
-
     
 bot.run()
 with bot:
-        bot.send_message(f"@{SUPPORT}", "Hello there I'm Now online")
+        bot.send_message(f"@{SUPPORT}", "Hello there I'm Online!\nPyrogram Version: {pyrover}")
