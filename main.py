@@ -81,7 +81,7 @@ My updates : [Nandhabots](https://t.me/nandhabots)
 My support : [NandhaSupport](https://t.me/nandhasupport)
 
 My All Credits fosto:
-[Nandha](https://t.me/nandhaxd) | [AASF](https://t.me/aasfcyberking)
+[Nandha](https://t.me/nandhaxd) |  [AASF](https://t.me/pro_x_d)
 """
 
 @bot.on_callback_query(filters.regex("about_back"))
@@ -92,6 +92,7 @@ async def about(_, query: CallbackQuery):
                 InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="help_back")]]))
 
 MORE_HELP_TEXT = """
+**Anime themed SFW:**
 • Think : /think To Makes A Person Think
 • Pout : /pout To Makes A Person Pout
 • Facepalm : /facepalm To Makes A Person Facepalm
