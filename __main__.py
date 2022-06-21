@@ -1,5 +1,5 @@
-import logging 
-from pyrogram import filters 
+import logging, os
+from pyrogram import filters, Client 
 from pyrogram.types import Message 
 import requests 
 
@@ -11,6 +11,19 @@ logging.basicConfig(
     format=FORMAT,
     datefmt="[%X]",
 )
+
+API_ID = os.environ.get("API_ID", None)
+API_HASH = os.environ.get("API_HASH", None)
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+SUPPORT = os.environ.get("SUPPORT", None)
+UPDATES = os.environ.get("UPDATES", None)
+BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
+PM_START_IMG = os.environ.get("PM_START_IMG" , "https://telegra.ph/file/895f87f9f8028ecc4b632.jpg")
+
+bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+
+
+PM_START_TEXT = "hello! {}\nI'm anime themed nekos bot below click the help button know my commandslist!"
 
 @bot.on_message(filters.command("cuddle"))
 def cuddle(_, m: Message):
