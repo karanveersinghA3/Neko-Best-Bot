@@ -1,5 +1,5 @@
 
-owner - [Nandha](https://nandhaxd) 
+owner - [Nandha](https://nandhaxd)\n
 credits - [NekosBest](https://nekos.best)
 
 config value:
