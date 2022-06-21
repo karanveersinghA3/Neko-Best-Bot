@@ -1,37 +1,42 @@
-import requests
-import os
-import time
-import logging
-import random
-from pyrogram import filters, Client
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
+import logging, os, random
+from pyrogram import filters, Client, __version__ as pyro
+from pyrogram.types import *
 
+import requests 
+
+# enable logging
+FORMAT = "[NekosBestBot] %(message)s"
 logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-API_ID = os.environ.get('API_ID', None)
-API_HASH = os.environ.get('API_HASH', None)
-TOKEN = os.environ.get('TOKEN', None)
-
-# For Local Deploy:
-"""
-API_ID = ""
-API_HASH = ""
-TOKEN = ""
-"""
-
-bot = Client(
-    "NekoBest" ,
-    api_id = API_ID ,
-    api_hash = API_HASH ,
-    bot_token = TOKEN
+    handlers=[logging.FileHandler("logs.txt"), logging.StreamHandler()],
+    level=logging.INFO,
+    format=FORMAT,
+    datefmt="[%X]",
 )
 
-PM_START_TEXT = """
-**Welcome** {}~kun ฅ(≈>ܫ<≈)
-`I'm A Neko Themed Telegram Bot Using Nekos.best! `
-**Make Your Groups Active By Adding Me There! ××**
-"""
+API_ID = os.environ.get("API_ID", None)
+API_HASH = os.environ.get("API_HASH", None)
+BOT_TOKEN = os.environ.get("BOT_TOKEN", None)
+SUPPORT = os.environ.get("SUPPORT", None)
+UPDATES = os.environ.get("UPDATES", None)
+BOT_USERNAME = os.environ.get("BOT_USERNAME", None) 
+PM_START_IMG = os.environ.get("PM_START_IMG" , None)
+PM_START_TEXT = os.environ.get("PM_START_TEXT", None) 
+
+
+bot = Client("nandhabot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
+
+
+buttons = [[
+            InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
+            InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help_back"),
+           ],[
+            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"),
+            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{UPDATES}")]]
+
+@bot.on_message(filters.command(["start","help"]))
+async def start(_, m):
+        await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT.format(m.from_user.mention),
+             reply_markup=InlineKeyboardMarkup(buttons))
 
 OWO = (
     "*Neko pats {} on the head.",
