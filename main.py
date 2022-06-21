@@ -1,5 +1,5 @@
 import logging, os, random
-from pyrogram import filters, Client, __version__ as pyrover
+from pyrogram import filters, Client, __version__ as pyro
 from pyrogram.types import *
 from subprocess import getoutput as run
 
@@ -462,4 +462,4 @@ def waifu(_, m: Message):
     
 bot.run()
 with bot:
-        bot.send_message(f"@{SUPPORT}", f"Hello there I'm Online!\nPyrogram Version: {pyrover}")
+        bot.send_message(f"@{SUPPORT}", f"**Hello there I'm Online!**\n**PyroVersion: {pyro}**")
