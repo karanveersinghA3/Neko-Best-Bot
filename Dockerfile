@@ -1,8 +1,9 @@
+
 FROM python:3.10.0
 
-WORKDIR __main__.py
+WORKDIR /root/__main__.py
 
-COPY . 
+COPY . .
 
 RUN pip3 install --upgrade pip setuptools
 
