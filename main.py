@@ -60,6 +60,18 @@ HELP_TEXT = """
 • Smile : /smile To Makes A Person Smile
 • Baka : /baka To Say A Person Baka
 • Blush : /blush To Makes A Person Blush
+
+**Message as to Lang below click the more button know more commandslist**
+"""
+
+@bot.on_callback_query(filters.regex("help_back"))
+async def help(_, query: CallbackQuery):
+           query = query.message
+           await query.edit_caption(HELP_TEXT,
+             reply_markup=InlineKeyboardMarkup([[
+                InlineKeyboardButton("MORE", callback_data="more_help_text")]]))
+
+MORE_HELP_TEXT = """
 • Think : /think To Makes A Person Think
 • Pout : /pout To Makes A Person Pout
 • Facepalm : /facepalm To Makes A Person Facepalm
@@ -79,13 +91,13 @@ HELP_TEXT = """
 • Sleep : /sleep To Say I Am Going To Sleep
 • Neko : /neko To Get Random Neko quotes
 """
-
-@bot.on_callback_query(filters.regex("help_back"))
+@bot.on_callback_query(filters.regex("more_help_text"))
 async def help(_, query: CallbackQuery):
            query = query.message
-           await query.edit_caption(HELP_TEXT,
+           await query.edit_caption(MORE_HELP_TEXT,
              reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}")]]))
+                InlineKeyboardButton("BACK", callback_data="help_back")]]))
+
 
 OWO = (
     "*Neko pats {} on the head.",
