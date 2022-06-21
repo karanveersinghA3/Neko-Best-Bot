@@ -28,7 +28,7 @@ python3 -m main
 
 #### Credits
 
-| <a href="https://github.com/Ctzfamily" target="_blank">**Nandha**</a> | <a href="https://github.com/Waifu-pics" target="_blank">**Waifu.pics**</a> | 
+| <a href="https://github.com/Ctzfamily" target="_blank">**Nandha**</a> | <a href="https://nekos.best" target="_blank">**NekosBest**</a> | 
 | :---: |:---:|
 | [![Aasf](https://avatars.githubusercontent.com/u/89440790?v=4)](https://avatars.githubusercontent.com/u/71401053?s=200&v=4)    | [![Waifu](https://avatars.githubusercontent.com/u/71401053?s=200&v=4)](https://github.com/Waifu-pics) |
 | <a href="https://github.com/Ctzfamily/NekoBestBot/commits?author=Ctzfamily" target="_blank">`All Code Of This Bot Is Written By Me ^_^`</a> | <a href="https://github.com/waifu-pic" target="_blank">`Base Idea Of Making This Bot`</a>
