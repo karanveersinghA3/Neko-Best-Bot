@@ -31,7 +31,7 @@ buttons = [[
             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"),
             InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{UPDATES}")]]
 
-@bot.on_message(filters.command("start"))
+@bot.on_message(filters.command(["start","help"]))
 async def start(_, m):
         await m.reply_photo(photo=PM_START_IMG,caption=PM_START_TEXT.format(m.from_user.mention),
              reply_markup=InlineKeyboardMarkup(buttons))
@@ -455,6 +455,37 @@ def waifu(_, m: Message):
           api = requests.get("https://api.waifu.pics/sfw/waifu").json()
           url = api["url"]       
           m.reply_photo(photo=url)
+
+@bot.on_message(
+    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(dev_user)
+)
+def sendlogs(_, m: Message):
+    logs = run("tail logs.txt")
+    x = paste(logs)
+    keyb = [
+        [
+            InlineKeyboardButton("Link", url=x),
+            InlineKeyboardButton("File", callback_data="sendfile"),
+        ],
+    ]
+    m.reply(x, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(keyb))
+
+
+
+@bot.on_callback_query(filters.regex(r"sendfile"))
+def sendfilecallback(_, query: CallbackQuery):
+    sender = query.from_user.id
+    query.message.chat.id
+
+    if sender in dev_user:
+        query.message.edit("`Sending...`")
+        query.message.reply_document("logs.txt")
+
+    else:
+        query.answer(
+            "This Is A Developer's Restricted Command.You Don't Have Access To Use This."
+        )
+
     
 bot.run()
 with bot:
