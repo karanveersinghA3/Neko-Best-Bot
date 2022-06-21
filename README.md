@@ -2,7 +2,7 @@
   <img src="https://telegra.ph/file/1ee51bc225382ffac5f61.jpg" alt="NekoBestBot">
 </p>
 <h1 align="center">
-  ╔═━「<b><a href="https://t.me/nekosbestbot">@NekoBestBot </a></b>」
+  ╔═━「<b><a href="https://bit.ly/3y6vMCC">@NekoBestBot </a></b>」
 </h1>
 
 ## Deploy
