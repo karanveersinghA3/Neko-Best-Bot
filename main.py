@@ -89,7 +89,7 @@ async def about(_, query: CallbackQuery):
            query = query.message
            await query.edit_caption(ABOUT_TEXT.format(pyro),
              reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("BACK", callback_data="help_back")]]))
+                InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="help_back")]]))
 
 MORE_HELP_TEXT = """
 • Think : /think To Makes A Person Think
@@ -116,7 +116,7 @@ async def helpmore(_, query: CallbackQuery):
            query = query.message
            await query.edit_caption(MORE_HELP_TEXT,
              reply_markup=InlineKeyboardMarkup([[
-                InlineKeyboardButton("BACK", callback_data="help_back")]]))
+                InlineKeyboardButton("ʙᴀᴄᴋ", callback_data="help_back")]]))
 
 
 OWO = (
