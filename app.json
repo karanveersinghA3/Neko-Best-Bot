@@ -4,9 +4,9 @@
     "logo": "https://telegra.ph/file/895f87f9f8028ecc4b632.jpg",
     "repository": "https://github.com/ctzfamily/NekoBestBot",
     "keywords": [
-        "pyrogram",
+        "pyrogrambot",
         "telegram bot",
-        "Anime React",
+        "NekoBestBot"
     ],
     "env": {
         "BOT_TOKEN": {
