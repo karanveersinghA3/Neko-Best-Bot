@@ -10,23 +10,27 @@
     ],
     "env": {
         "BOT_TOKEN": {
-            "description": "Your Bot token from @Botfather"
+            "description": "Your Bot token from @Botfather",
+            "value": ""
         },
         "API_ID": {
-            "description": "Your API_ID from https://my.telegram.org/apps"
+            "description": "Your API_ID from https://my.telegram.org",
+            "value": ""
         },
         "API_HASH": {
-            "description": "Your API_HASH from https://my.telegram.org/apps"
+            "description": "Your API_HASH from https://my.telegram.org",          
+            "value": ""
         },
         "BOT_USERNAME": {
-             "description": "Your bot username without @"
+             "description": "Your bot username without @",
+             "value": ""
         },
         "SUPPORT": {
-             "description": "Your SupportChat username without @"
+             "description": "Your SupportChat username without @",
              "value": "nandhasupport"
        },
         "UPDATES": {
-              "description": "Your UpdatesChannel username without @"
+              "description": "Your UpdatesChannel username without @",
               "value": "nandhabots"
        }
     },
