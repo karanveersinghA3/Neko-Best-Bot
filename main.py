@@ -26,8 +26,8 @@ buttons = [[
             InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ", url=f"t.me/{BOT_USERNAME}?startgroup=true"),
             InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help_back"),
            ],[
-            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/{SUPPORT}"),
-            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/{UPDATES}")]]
+            InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/MeMiC_sQuAd"),
+            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/MeMiC_sQuAd")]]
 
 PM_START_TEXT = """
 **Welcome** {}~kun ฅ(≈>ܫ<≈)
@@ -77,13 +77,13 @@ ABOUT_TEXT = """
 `I'm A Neko Themed Telegram Bot Using Nekos.best! `
 
 My Pyroversion: {}
-My updates : [Nandhabots](https://t.me/nandhabots)
-My support : [NandhaSupport](https://t.me/nandhasupport)
+My updates : [Futaro](https://t.me/MeMiC_sQuAd)
+My support : [Memic support](https://t.me/MeMiC_sQuAd)
 
-[Source](https://github.com/ctzfamily/neko-best-bot) ✨
+[Source](https://github.com/karanveersinghA3/Neko-Best-Bot/edit/main/main.py) ✨
 
 My All Credits fosto:
-[Nandha](https://t.me/nandhaxd) |  [AASF](https://t.me/pro_x_d)
+[Unknown](https://t.me/Dynamite_101) |  [Vikky](https://t.me/HeHe_Joker_King)
 """
 
 @bot.on_callback_query(filters.regex("about_back"))
