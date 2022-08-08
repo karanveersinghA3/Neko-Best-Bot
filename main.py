@@ -27,7 +27,7 @@ buttons = [[
             InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help_back"),
            ],[
             InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/MeMiC_sQuAd"),
-            InlineKeyboardButton("ᴜᴘᴅᴀᴛᴇs", url=f"https://t.me/MeMiC_sQuAd")]]
+            InlineKeyboardButton("📍Owner📍", url=f"https://t.me/Dynamite_101")]]
 
 PM_START_TEXT = """
 **Welcome** {}~kun ฅ(≈>ܫ<≈)
