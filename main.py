@@ -75,10 +75,15 @@ async def helpback(_, query: CallbackQuery):
 ABOUT_TEXT = """
 **Hello Dear Users!**
 `I'm A Neko Themed Telegram Bot Using Nekos.best! `
-ʙʏ-@ᴅʏɴᴀᴍɪᴛᴇ_101
 
+My Pyroversion: {}
+My Group : [Support chat](https://t.me/MeMiC_sQuAd)
+My master : [Noob owner](https://t.me/Dynamite_101)
 
+[Source](https://github.com/ctzfamily/neko-best-bot) ✨
 
+My All Credits fosto:
+[Noob](https://t.me/Dynamite_101) |  [Joker](https://t.me/HeHe_JoKeR_2005)
 
 
 
